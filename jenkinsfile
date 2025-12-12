@@ -2,13 +2,13 @@ pipeline {
 	agent any
 	environment {
 		DOCKERHUB_CRED=credentials('dockerhub')
-		IMAGE_NAME="<docker_hub_username>/<docker_hub_repo_name>"
+		IMAGE_NAME=git-jenkins-docker
 	}
 	
 	stages {
 		stage('checkout') {
 			steps {
-				git url:'<github_repo_ssh_url>', branch:'main' 
+				git url:'git@github.com:br-chandan/git-jenkins-docker.git', branch:'main' 
 			}
 		}
 		
@@ -44,3 +44,4 @@ pipeline {
 		}
 	}
 }
+
