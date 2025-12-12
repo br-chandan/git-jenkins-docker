@@ -2,7 +2,7 @@ pipeline {
 	agent any
 	environment {
 		DOCKERHUB_CRED=credentials('dockerhub')
-		IMAGE_NAME=git-jenkins-docker
+		IMAGE_NAME="git-jenkins-docker"
 	}
 	
 	stages {
@@ -44,4 +44,5 @@ pipeline {
 		}
 	}
 }
+
 
